@@ -10,19 +10,37 @@
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
             color: #333;
-            margin: 20px;
+            margin: 0;
+            padding: 20px;
             text-align: center;
+        }
+
+        /* Container to Center Content */
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
         }
 
         /* Header Styling */
         h1 {
             color: #0073e6;
             font-size: 28px;
+            margin-bottom: 15px;
         }
 
         h2 {
             color: #e63946;
             font-size: 24px;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e63946;
+            display: inline-block;
         }
 
         /* Paragraph Styling */
@@ -30,13 +48,20 @@
             font-size: 18px;
             color: #555;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         /* List Styling */
         ul {
             list-style-type: square;
+            padding: 10px;
+            margin: 20px auto;
             display: inline-block;
             text-align: left;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
         }
 
         li {
@@ -49,7 +74,7 @@
         img {
             border-radius: 50%;
             border: 3px solid #0073e6;
-            margin: 10px 0;
+            margin: 15px 0;
         }
 
         /* Link Styling */
@@ -63,22 +88,34 @@
             text-decoration: underline;
         }
 
-        /* Form Styling */
-        form {
-            background-color: white;
+        /* Form Section */
+        .form-container {
+            margin-top: 20px;
             padding: 20px;
+            background-color: #fff;
             border-radius: 8px;
-            display: inline-block;
-            text-align: left;
+            border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
         }
 
         input, textarea {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin: 5px 0;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 16px;
         }
 
         input[type="submit"] {
@@ -87,7 +124,8 @@
             border: none;
             cursor: pointer;
             font-size: 16px;
-            padding: 10px;
+            padding: 12px;
+            transition: background 0.3s;
         }
 
         input[type="submit"]:hover {
@@ -97,36 +135,40 @@
 </head>
 <body>
 
-    <h1>My Personal Profile</h1>
-    <p>Welcome to my personal profile page! Here, you can learn more about who I am, my passions, and what I love to do. From my hobbies and interests to my favorite website, this page gives you a glimpse into my world. If you'd like to connect, feel free to reach out using the contact form below. Looking forward to hearing from you!</p>
-    
-    <img src="images/B_ 5. - Ruanda.jpeg" alt="My Profile Picture" width="150" height="150">
+    <div class="container">
+        <h1>My Personal Profile</h1>
+        <p>Welcome to my personal profile page! Here, you can learn more about who I am, my passions, and what I love to do. From my hobbies and interests to my favorite website, this page gives you a glimpse into my world. If you'd like to connect, feel free to reach out using the contact form below. Looking forward to hearing from you!</p>
 
-    <h2>My Hobbies & Interests</h2>
-    <ul>
-        <li>I love art, specifically music and drawings.</li>
-        <li>I hate and I'm allergic to injustice.</li>
-        <li>Watching or Listening to documentaries.</li>
-        <li>I cherish and love my "me time."</li>
-        <li>I'm ambitious and committed to anything I put my mind to.</li>
-    </ul>
+        <img src="images/B_ 5. - Ruanda.jpeg" alt="My Profile Picture" width="150" height="150">
 
-    <h2>My Favorite Website</h2>
-    <p>Check out my favorite website: <a href="https://www.youtube.com" target="_blank">Click Here</a></p>
+        <h2>My Hobbies & Interests</h2>
+        <ul>
+            <li>I love art, specifically music and drawings.</li>
+            <li>I hate and I'm allergic to injustice.</li>
+            <li>Watching or Listening to documentaries.</li>
+            <li>I cherish and love my "me time."</li>
+            <li>I'm ambitious and committed to anything I put my mind to.</li>
+        </ul>
 
-    <h2>Contact Me</h2>
-    <form>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name"><br><br>
+        <h2>My Favorite Website</h2>
+        <p>Check out my favorite website: <a href="https://www.youtube.com" target="_blank">Click Here</a></p>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email"><br><br>
+        <div class="form-container">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
 
-        <input type="submit" value="Send Message">
-    </form>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+    </div>
 
 </body>
 </html>
