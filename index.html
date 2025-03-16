@@ -4,146 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Profile</title>
-
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* General Styling */
-        body {
-            background-color: #f5f5f5;
-            font-family: 'Poppins', sans-serif;
-            color: #333;
+        /* General Styles */
+        * {
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Centered Container */
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0073e6;
+            padding: 15px 20px;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Flexbox Layout */
         .container {
-            width: 80%;
-            max-width: 800px;
-            margin: auto;
+            display: flex;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .main-content {
+            flex: 2;
             background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
         }
 
-        /* Stylish Headings */
-        h1, h2 {
-            font-family: 'Dancing Script', cursive;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #0073e6;
-            background: linear-gradient(to right, #0073e6, #e63946);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: 28px;
-            color: #e63946;
-            margin-top: 20px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #e63946;
-            display: inline-block;
-        }
-
-        /* Paragraph Styling */
-        p {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        /* List Styling */
-        ul {
-            list-style-type: square;
-            padding: 10px;
-            margin: 20px auto;
-            display: inline-block;
-            text-align: left;
-            background-color: #f0f0f0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-        }
-
-        li {
-            font-size: 16px;
-            color: #333;
-            margin: 5px 0;
-        }
-
-        /* Image Styling */
-        img {
-            border-radius: 50%;
-            border: 3px solid #0073e6;
-            margin: 15px 0;
-        }
-
-        /* Stylish Links */
-        a {
-            color: #0073e6;
-            font-weight: bold;
-            text-decoration: none;
-            position: relative;
-        }
-
-        a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 100%;
-            height: 2px;
-            background: #0073e6;
-            transform: scaleX(0);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        a:hover::after {
-            transform: scaleX(1);
-        }
-
-        a:hover {
-            color: #e63946;
-        }
-
-        /* Form Section */
-        .form-container {
-            margin-top: 20px;
+        .sidebar {
+            flex: 1;
+            background-color: white;
             padding: 20px;
-            background-color: #fff;
             border-radius: 8px;
-            border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        /* Profile Image */
+        .profile-img {
+            display: block;
+            margin: 10px auto;
+            border-radius: 50%;
         }
 
-        label {
-            font-size: 16px;
-            font-weight: bold;
+        /* Contact Form */
+        form {
+            margin-top: 15px;
         }
 
         input, textarea {
             width: 100%;
             padding: 10px;
-            margin: 5px 0;
+            margin-top: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
+            border-radius: 5px;
         }
 
         input[type="submit"] {
@@ -151,47 +99,77 @@
             color: white;
             border: none;
             cursor: pointer;
-            font-size: 16px;
-            padding: 12px;
-            transition: background 0.3s;
+            font-weight: bold;
         }
 
         input[type="submit"]:hover {
-            background-color: #e63946;
+            background-color: #005bb5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>My Personal Profile</h1>
-        <p>Welcome to my personal profile page! Here, you can learn more about who I am, my passions, and what I love to do. From my hobbies and interests to my favorite website, this page gives you a glimpse into my world. If you'd like to connect, feel free to reach out using the contact form below. Looking forward to hearing from you!</p>
-
-        <img src="images/B_ 5. - Ruanda.jpeg" alt="My Profile Picture" width="150" height="150">
-
-        <h2>My Hobbies & Interests</h2>
-        <ul>
-            <li>I love art, specifically music and drawings.</li>
-            <li>I hate and I'm allergic to injustice.</li>
-            <li>Watching or Listening to documentaries.</li>
-            <li>I cherish and love my "me time."</li>
-            <li>I'm ambitious and committed to anything I put my mind to.</li>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <h1>My Profile</h1>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
+    </nav>
 
-        <h2>My Favorite Website</h2>
-        <p>Check out my favorite website: <a href="https://www.youtube.com" target="_blank">Click Here</a></p>
+    <!-- Flexbox Layout -->
+    <div class="container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1>My Personal Profile</h1>
+            <p>Welcome to my personal profile page! Here, you can learn more about who I am, my passions, and what I love to do.</p>
+            
+            <img src="images/B_ 5. - Ruanda.jpeg" alt="My Profile Picture" class="profile-img" width="150" height="150">
 
-        <div class="form-container">
+            <h2>My Hobbies & Interests</h2>
+            <ul>
+                <li>I love art, specifically music and drawings.</li>
+                <li>I hate and I'm allergic to injustice.</li>
+                <li>Watching or listening to documentaries.</li>
+                <li>I cherish and love my me-time.</li>
+                <li>I'm ambitious and committed to anything I put my mind to.</li>
+            </ul>
+
+            <h2>My Favorite Website</h2>
+            <p>Check out my favorite website: <a href="https://www.youtube.com" target="_blank">Click Here</a></p>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
             <h2>Contact Me</h2>
             <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4"></textarea><br><br>
 
                 <input type="submit" value="Send Message">
             </form>
