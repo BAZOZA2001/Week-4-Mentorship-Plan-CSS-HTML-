@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Personal Profile</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
     <style>
-        /* Page Background */
+        /* General Styling */
         body {
             background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: #333;
             margin: 0;
             padding: 20px;
             text-align: center;
         }
 
-        /* Container to Center Content */
+        /* Centered Container */
         .container {
             width: 80%;
             max-width: 800px;
@@ -27,16 +31,23 @@
             border: 1px solid #ddd;
         }
 
-        /* Header Styling */
+        /* Stylish Headings */
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+        }
+
         h1 {
+            font-size: 36px;
             color: #0073e6;
-            font-size: 28px;
+            background: linear-gradient(to right, #0073e6, #e63946);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
         }
 
         h2 {
+            font-size: 28px;
             color: #e63946;
-            font-size: 24px;
             margin-top: 20px;
             padding-bottom: 5px;
             border-bottom: 2px solid #e63946;
@@ -77,15 +88,32 @@
             margin: 15px 0;
         }
 
-        /* Link Styling */
+        /* Stylish Links */
         a {
             color: #0073e6;
-            text-decoration: none;
             font-weight: bold;
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: #0073e6;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        a:hover::after {
+            transform: scaleX(1);
         }
 
         a:hover {
-            text-decoration: underline;
+            color: #e63946;
         }
 
         /* Form Section */
@@ -129,7 +157,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #005bb5;
+            background-color: #e63946;
         }
     </style>
 </head>
